@@ -15,6 +15,7 @@ export class UserController {
     }
 
     async save(request: Request, response: Response, next: NextFunction) {
+        //findOneしてからsaveする処理が必要。
         return this.userRepository.save(request.body);
     }
 
