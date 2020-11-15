@@ -3,6 +3,7 @@
 ## これは何？
 
 スキー板やスキー板メーカーの操作APIです。  
+このリポジトリはCode Chrysalisの生徒であるときに作成しました（This was created during my time as a student at Code Chrysalis）
 <br>
 <br>
 
@@ -38,6 +39,23 @@ POST http://localhost:3000/skis/
 }
 ```
 
+### スキー板変更API
+PATCH http://localhost:3000/skis/:id
+
+スキー板の情報を変更できます。
+嫌な情報を修正してください。
+
+以下のように修正箇所についてJSON形式をBODYに載せてPATCHします。
+
+```
+{
+    "Detail":"とても良くなった",
+}
+```
+
+※:Idは、スキー板一覧参照APIで取得してください。
+
+
 ### スキー板削除API
 
 DELETE http://localhost:3000/skis/:id
@@ -47,11 +65,12 @@ DELETE http://localhost:3000/skis/:id
 
 ※:Idは、スキー板一覧参照APIで取得してください。
 
+<br>
+<br>
+<br>
 
 ## スキーメーカー関連API一覧
 
-<br>
-<br>
 
 ### スキーメーカー一覧参照API
 GET http://localhost:3000/makers/
@@ -62,7 +81,7 @@ GET http://localhost:3000/makers/
 GET http://localhost:3000/makers/:id
 ```
 
-### スキー板追加API
+### スキーメーカー追加API
 
 POST http://localhost:3000/makers/
 
@@ -79,7 +98,24 @@ POST http://localhost:3000/makers/
 }
 ```
 
-### メーカー削除API
+### スキーメーカー変更API
+PATCH http://localhost:3000/makers/:id
+
+スキーメーカーの情報を変更できます。
+嫌な情報を修正してください。
+
+以下のように修正箇所についてJSON形式をBODYに載せてPATCHします。
+
+```
+{
+    "Detail":"とても良くなった",
+}
+```
+
+※:Idは、スキーメーカ一覧参照APIで取得してください。
+
+
+### スキーメーカー削除API
 
 DELETE http://localhost:3000/makers/:id
 

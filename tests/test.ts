@@ -25,7 +25,7 @@ declare const global: GlobalWithCognitoFix;
 global.fetch = require('node-fetch').default;
 
 
-xdescribe('makerを見るよ', () => {
+describe('makerを見るよ', () => {
 
     it('全てのmakerをゲットできる', async () => {
         const url = "http://localhost:3000/makers";
@@ -103,11 +103,30 @@ xdescribe('makerを見るよ', () => {
         // })
 
     });
+
+    it('makerを修正できる', async () => {
+        const id = 2;
+        const url = "http://localhost:3000/makers/" + id;
+
+        const patchData = {
+            "Detail": "アメリカのメーカー",
+        };
+
+        const res = await fetch(url, {
+            method: `PATCH`,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(patchData)
+        });
+
+        expect(res.status).equal(200)
+    });
 });
 
-describe('makerを見るよ', () => {
+describe('skiを見るよ', () => {
 
-    it('全てのmakerをゲットできる', async () => {
+    it('全てのskiをゲットできる', async () => {
         const url = "http://localhost:3000/skis";
 
         const res = await fetch(url);
@@ -116,7 +135,7 @@ describe('makerを見るよ', () => {
         expect(res.status).equal(200)
     });
 
-    it('1つのmakerをゲットできる', async () => {
+    it('1つのskiをゲットできる', async () => {
         const id = 3;
         const skiName="KS-XX"
         const url = "http://localhost:3000/skis/" + id;
@@ -130,7 +149,7 @@ describe('makerを見るよ', () => {
     });
 
 
-    xit('makerを削除できる', async () => {
+    xit('skiを削除できる', async () => {
         const id = 8;
         const url = "http://localhost:3000/skis/" + id;
 
@@ -141,7 +160,7 @@ describe('makerを見るよ', () => {
         expect(res.status).equal(200)
     });
 
-    xit('makerにPOSTできる', async () => {
+    xit('skiにPOSTできる', async () => {
         const url = "http://localhost:3000/skis";
         const addSki = "testSki"
 
@@ -183,6 +202,23 @@ describe('makerを見るよ', () => {
 
     });
 
+    xit('skiを修正できる', async () => {
+        const id = 7;
+        const url = "http://localhost:3000/skis/" + id;
 
+        const patchData = {
+            "Detail": "Patched!",
+        };
+
+        const res = await fetch(url, {
+            method: `PATCH`,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(patchData)
+        });
+
+        expect(res.status).equal(200)
+    });
 
 })

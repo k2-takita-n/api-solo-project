@@ -21,6 +21,11 @@ export const Routes = [{
     controller: Controller,
     action: "removeMakers"
 }, {
+    method: "patch",
+    route: "/makers/:id",
+    controller: Controller,
+    action: "patchMakers"
+}, {
     method: "get",
     route: "/skis",
     controller: Controller,
@@ -40,4 +45,9 @@ export const Routes = [{
     route: "/skis/:id",
     controller: Controller,
     action: "removeSkis"
+}, {
+    method: "patch",
+    route: "/skis/:id",
+    controller: Controller,
+    action: "patchSkis"
 }];

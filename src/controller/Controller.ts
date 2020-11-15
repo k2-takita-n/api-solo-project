@@ -27,6 +27,12 @@ export class Controller {
         return this.makerRepository.remove(MakerToRemove);
     }
 
+    async patchMakers(request: Request, response: Response, next: NextFunction) {
+        let makerPatch = await this.makerRepository.findOne(request.params.id);
+        const after = Object.assign(makerPatch,request.body);
+        return this.makerRepository.save(after);
+    }
+
     //Ski
     async allSkis(request: Request, response: Response, next: NextFunction) {
         return this.skiRepository.find();
@@ -37,6 +43,7 @@ export class Controller {
     }
 
     async postSkis(request: Request, response: Response, next: NextFunction) {
+        //console.log("post",request.body);
         return this.skiRepository.save(request.body);
     }
     
@@ -44,6 +51,12 @@ export class Controller {
         let SkiToRemove = await this.skiRepository.findOne(request.params.id);
   
         return this.skiRepository.remove(SkiToRemove);
+    }
+
+    async patchSkis(request: Request, response: Response, next: NextFunction) {
+        let SkiPatch = await this.skiRepository.findOne(request.params.id);
+        const after = Object.assign(SkiPatch,request.body);
+        return this.skiRepository.save(after);
     }
 
 
