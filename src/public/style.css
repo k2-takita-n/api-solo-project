@@ -1,16 +1,17 @@
 
 div#myspace1 {
-    background-color: blue;
+    background-color: gray;
     width: 80%;
 }
 
 div#myspace2 {
-    background-color: #ff1;
+    background-color: gray;
     width: 80%;
 }
 
 
 div#myspace3 {
-    background-color: #999;
+    background-color: rgb(0, 0, 0);
+    color: white;
     width: 80%;
 }

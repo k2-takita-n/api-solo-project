@@ -4,7 +4,6 @@ import "chai-http";
 
 import { describe, it } from "mocha";
 const expect = require('chai').expect;
-import { getName } from './testtest';
 import { assert } from "chai";
 const request = require('request');
 
