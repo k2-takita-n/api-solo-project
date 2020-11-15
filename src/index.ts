@@ -5,11 +5,18 @@ import * as bodyParser from "body-parser";
 import {Request, Response} from "express";
 import {Routes} from "./routes";
 import {User} from "./entity/User";
+const path = require('path');
 
 createConnection().then(async connection => {
 
     // create express app
     const app = express();
+
+    //app.get('/', (req, res) => res.send('Hello World!'))
+    //app.use(express.static(path.join(__dirname, 'public')));
+   
+    app.use(express.static(path.join(__dirname, 'public')));
+
     app.use(bodyParser.json());
 
     // register express routes from defined application routes

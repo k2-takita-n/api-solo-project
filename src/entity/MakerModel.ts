@@ -1,20 +1,15 @@
-
-import { Entity, OneToMany, PrimaryGeneratedColumn, Column, ManyToOne, OneToOne, JoinColumn } from "typeorm";
+import { Entity, OneToMany, PrimaryGeneratedColumn, Column, ManyToOne, OneToOne, JoinColumn, PrimaryColumn } from "typeorm";
 import { Ski } from "./SkiModel";
 
 @Entity()
 export class Maker {
 
-    @PrimaryGeneratedColumn("uuid")
-    public id: string;
+    @PrimaryGeneratedColumn()
+    id: number;
 
-    @Column()
+    @Column({ nullable: true })
     public MakerName: string;
 
-    @Column()
+    @Column({ nullable: true })
     public Detail: string;
-
-    @OneToMany((type)=>Ski, (ski) => ski.Maker)
-    public skis: Ski[];
-
 }

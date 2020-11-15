@@ -1,0 +1,32 @@
+[
+    {
+        "Name" : "TRIUN S",
+        "Detail" : "小回り向け",
+        "makerId": 1
+    },
+    {
+        "Name" : "TRIUN GS",
+        "Detail" : "大回り向け",
+        "makerId" : 1
+    },
+    {
+        "Name" : "KS-XX",
+        "Detail" : "基礎板。2020年にでた。",
+        "makerId": 1
+    },
+    {
+        "Name" : "Supershape",
+        "Detail" : "ナチュラルな板",
+        "makerId" : 2
+    },
+    {
+        "Name" : "Supershape e-Speed",
+        "Detail" : "黄色の板",
+        "makerId": 2
+    },
+    {
+        "Name" : "Supershape e-Magnum",
+        "Detail" : "緑の板",
+        "makerId" : 2
+    }
+]

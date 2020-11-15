@@ -17,17 +17,21 @@
       "pg": "^8.4.0",
       "reflect-metadata": "^0.1.10",
       "request": "^2.88.2",
-      "typeorm": "0.2.29"
+      "typeorm": "0.2.29",
+      "typeorm-seeding": "^1.6.1"
    },
    "scripts": {
       "typeorm-cli": "typeorm",
       "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js",
       "start": "ts-node src/index.ts",
-      "test": "./node_modules/.bin/mocha --require ts-node/register --watch-extensions ts tests/test.ts",
+      "test": "./node_modules/.bin/mocha --timeout 5000 --require ts-node/register --watch-extensions ts tests/test.ts",
       "makeMigrations": "yarn orm migration:generate",
       "migrate": "yarn orm migration:run",
       "rollback": "yarn orm migration:revert",
-      "orm": "ts-node -r dotenv/config ./node_modules/typeorm/cli.js --config ormconfig.json"
+      "orm": "ts-node -r dotenv/config ./node_modules/typeorm/cli.js --config ormconfig.json",
+      "seed": "yarn seeder --configName ormconfig.json seed",
+      "seed:config": "ts-node ./node_modules/typeorm-seeding/dist/cli.js config",
+      "seed:run": "ts-node ./node_modules/typeorm-seeding/dist/cli.js seed"
    },
    "devDependencies": {
       "@types/node": "^8.0.29",

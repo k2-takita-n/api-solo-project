@@ -1,4 +1,3 @@
-
 import { Entity, OneToMany, PrimaryGeneratedColumn, Column, ManyToOne, OneToOne, JoinColumn } from "typeorm";
 import { Maker } from "./MakerModel";
 
@@ -6,15 +5,15 @@ import { Maker } from "./MakerModel";
 @Entity()
 export class Ski {
 
-    @PrimaryGeneratedColumn("uuid")
-    public id: string;
+    @PrimaryGeneratedColumn()
+    id: number;
 
-    @Column()
+    @Column({ nullable: true })
     public Name: string;
 
-    @Column()
+    @Column({ nullable: true })
     public Detail: string;
 
-    @ManyToOne((type)=>Maker, (maker) => maker.id)
-    public Maker: Maker;
+    @Column({ nullable: true })
+    public makerId: number;
 }
